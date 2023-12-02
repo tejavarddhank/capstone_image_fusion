@@ -2,8 +2,8 @@
 FROM python:3.8
 
 # Install system dependencies (libgl1-mesa-glx for cv2)
-RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx
+# RUN apt-get update && apt-get install -y \
+#     libgl1-mesa-glx
 
 # Set the working directory within the container
 WORKDIR /app

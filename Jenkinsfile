@@ -17,7 +17,7 @@ pipeline {
                 // dir('stockPrediction/') {
                     script {
                         // Run the command to build a Docker image
-                        sh 'docker build -t app ./flask_image_fusion/'
+                        sh 'docker build -t app .'
                         
                     }
                 // }
@@ -27,7 +27,7 @@ pipeline {
 
         stage('Run Docker Image') {
             steps {
-                sh 'docker run -d -p 4000:80 --name app_container app'
+                sh 'docker run -d -p 5000:5000 --name app_container app'
 
             }
         }
