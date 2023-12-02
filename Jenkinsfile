@@ -12,18 +12,18 @@ pipeline {
         //     }
         // }
 
-        // stage('Build Docker Image') {
-        //     steps {
-        //         // dir('stockPrediction/') {
-        //             script {
-        //                 // Run the command to build a Docker image
-        //                 sh 'docker build -t app .'
+        stage('Build Docker Image') {
+            steps {
+                // dir('stockPrediction/') {
+                    script {
+                        // Run the command to build a Docker image
+                        sh 'docker build -t app .'
                         
-        //             }
-        //         // }
+                    }
+                // }
                 
-        //     }
-        // }
+            }
+        }
 
         // stage('Run Docker Image') {
         //     steps {
