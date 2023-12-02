@@ -6,8 +6,8 @@ pipeline {
         stage('Setup') {
             steps {
                 script {
-                    sh "docker stop app_container || true"
-                    sh "docker rm app_container || true"
+                    // sh "docker stop app_container || true"
+                    // sh "docker rm app_container || true"
                 }
             }
         }
