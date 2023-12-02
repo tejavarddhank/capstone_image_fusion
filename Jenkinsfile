@@ -12,25 +12,25 @@ pipeline {
         //     }
         // }
 
-        stage('Build Docker Image') {
-            steps {
-                // dir('stockPrediction/') {
-                    script {
-                        // Run the command to build a Docker image
-                        sh 'docker build -t app .'
+        // stage('Build Docker Image') {
+        //     steps {
+        //         // dir('stockPrediction/') {
+        //             script {
+        //                 // Run the command to build a Docker image
+        //                 sh 'docker build -t app .'
                         
-                    }
-                // }
+        //             }
+        //         // }
                 
-            }
-        }
+        //     }
+        // }
 
-        stage('Run Docker Image') {
-            steps {
-                sh 'docker run -d -p 5000:5000 --name app_container app'
+        // stage('Run Docker Image') {
+        //     steps {
+        //         sh 'docker run -d -p 5000:5000 --name app_container app'
 
-            }
-        }
+        //     }
+        // }
 
         stage('Wait for Docker Container') {
             steps {
