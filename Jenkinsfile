@@ -17,7 +17,7 @@ pipeline {
                 // dir('stockPrediction/') {
                     script {
                         // Run the command to build a Docker image
-                        sh 'docker build -t app .'
+                        sh 'docker build -t capstone .'
                         
                     }
                 // }
