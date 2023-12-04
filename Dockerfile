@@ -1,21 +1,20 @@
-# Use the Python 3.8 image as the base
 FROM python:3.8
 
-# Install system dependencies (libgl1-mesa-glx for cv2)
-RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx
+# Install system dependencies
+RUN apt-get update \
+    && apt-get install -y libgl1-mesa-glx
 
-# Set the working directory within the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the application code into the container
+# Copy the application code to the container
 COPY . /app
 
-# Install Python dependencies from requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Install Python dependencies
+RUN pip install -r requirements.txt
 
-# Expose the port the app runs on
+# Expose the port on which your Flask app runs
 EXPOSE 5000
 
-# Specify the command to run the application
+# Command to run the application
 CMD ["flask", "run", "--host=0.0.0.0"]
