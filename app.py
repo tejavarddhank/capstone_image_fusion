@@ -17,8 +17,11 @@ def fuse_images(image1_path, image2_path):
     img1 = cv2.imread(image1_path)
     img2 = cv2.imread(image2_path)
 
+    # Resize images to have the same dimensions
+    img2_resized = cv2.resize(img2, (img1.shape[1], img1.shape[0]))
+
     # Perform image fusion (averaging in this case)
-    fused_image = cv2.addWeighted(img1, 0.5, img2, 0.5, 0)
+    fused_image = cv2.addWeighted(img1, 0.5, img2_resized, 0.5, 0)
 
     return fused_image
 
