@@ -12,6 +12,15 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # Ensure the UPLOAD_FOLDER exists
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
+#def fuse_images(image1_path, image2_path):
+    #img1 = cv2.imread(image1_path)
+    #img2 = cv2.imread(image2_path)
+
+    #img2_re = cv2.resize(img2, (img1.shape[1])
+
+    #fused_img = cv2.addWeighted(img1,img2)
+
+   # return fused_image
 def fuse_images(image1_path, image2_path):
     # Load images
     img1 = cv2.imread(image1_path)
@@ -24,6 +33,7 @@ def fuse_images(image1_path, image2_path):
     fused_image = cv2.addWeighted(img1, 0.5, img2_resized, 0.5, 0)
 
     return fused_image
+
 
 @app.route('/')
 def index():
