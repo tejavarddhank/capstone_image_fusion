@@ -3,14 +3,14 @@ pipeline {
 
     stages {
 
-        stage('Setup') {
-            steps {
-                script {
-                    sh "docker stop app_container || true"
-                    sh "docker rm app_container || true"
-                }
-            }
-        }
+        // stage('Setup') {
+        //     steps {
+        //         script {
+        //             sh "docker stop app_container || true"
+        //             sh "docker rm app_container || true"
+        //         }
+        //     }
+        // }
 
         stage('Build Docker Image') {
             steps {
@@ -24,12 +24,12 @@ pipeline {
             }
         }
 
-        stage('Run Docker Image') {
-            steps {
-                sh 'docker run -d -p 5000:5000 --name app_container app'
+        // stage('Run Docker Image') {
+        //     steps {
+        //         sh 'docker run -d -p 5000:5000 --name app_container app'
 
-            }
-        }
+        //     }
+        // }
 
         stage('Wait for Docker Container') {
             steps {
