@@ -3,20 +3,19 @@ pipeline {
 
     stages {
 
-        // stage('Setup') {
-        //     steps {
-        //         script {
-        //             // sh "docker stop app_container || true"
-        //             // sh "docker rm app_container || true"
-        //         }
-        //     }
-        // }
+        stage('Setup') {
+            steps {
+                script {
+                    sh "docker stop app_container || true"
+                    sh "docker rm app_container || true"
+                }
+            }
+        }
 
         stage('Build Docker Image') {
             steps {
                 // dir('stockPrediction/') {
                     script {
-                        // Run the command to build a Docker image
                         sh 'docker build -t capstone .'
                         
                     }
