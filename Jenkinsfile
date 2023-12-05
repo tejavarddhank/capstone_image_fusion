@@ -25,12 +25,12 @@ pipeline {
             }
         }
 
-        // stage('Run Docker Image') {
-        //     steps {
-        //         sh 'docker run -d -p 5000:5000 --name app_container app'
+        stage('Run Docker Image') {
+            steps {
+                sh 'docker run -d -p 5000:5000 --name app_container app'
 
-        //     }
-        // }
+            }
+        }
 
         stage('Wait for Docker Container') {
             steps {
