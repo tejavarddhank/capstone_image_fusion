@@ -58,9 +58,11 @@ def upload():
 
     return render_template('result.html', fused_image_path=fused_image_path)
 
-
+# defining download function so that the final image gets downloaded 
 @app.route('/download')
 def download():
+    #fused_image_path = os.path.join(main.config['UPLOAD_FOLDER'], 'image.jpg')
+    #return send_file(fused_path)
     fused_image_path = os.path.join(app.config['UPLOAD_FOLDER'], 'fused_image.jpg')
     return send_file(fused_image_path, as_attachment=True)
 
