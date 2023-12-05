@@ -54,10 +54,10 @@ a {
     text-decoration: none;
 }
 
-.download-button {
+/* .download-button {
     display: block;
     margin-top: 20px;
-}
+} */
 
 .download-button button {
     background-color: #008CBA;
